@@ -9,7 +9,28 @@
   <title>Colosseum</title>
 
   <script>
+    function init() {
+      const video = document.getElementById("perturbation-task-video");
+      video.addEventListener("error", () => {
+        console.log("Error loading video: ", video.src), ". Setting default to none";
+        const task = document.getElementById("single-menu-tasks").value;
+        const uri = "media/perturbations/" + task + "-none.mp4";
+        video.src = uri;
+        video.playbackRate = 1.75;
+        video.play();
+      }, true);
+    }
+
     function updateSingleVideo() {
+      const task = document.getElementById("single-menu-tasks").value;
+      const perturbation = document.getElementById("single-menu-perturbations").value;
+
+      const video = document.getElementById("perturbation-task-video");
+      const uri = "media/perturbations/" + task + "-" + perturbation + ".mp4"
+      console.log("uri: ", uri);
+      video.src = uri;
+      video.playbackRate = 1.75;
+      video.play();
     }
   </script>
 
@@ -30,7 +51,7 @@
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
 </head>
-<body onload="updateSingleVideo();">
+<body onload="init(); updateSingleVideo();">
 
 <section class="hero">
   <div class="hero-body">
@@ -142,6 +163,82 @@
     <br>
     <!--/ Abstract. -->
 
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-widescreen">
+    <div class="rows">
+      <div class="rows is-centered ">
+        <div class="row is-full-width">
+          <br/>
+          <br/>
+
+          <h2 class="title is-3">Perturbations</h2>
+          <div class="columns">
+            <div class="column has-text-centered">
+              <h3 class="title is-5">Perturbations Factors</h3>
+  
+              Perturbation
+              <div class="select is-small">
+                <select id="single-menu-perturbations" onchange="updateSingleVideo()">
+                <option value="none" selected="selected">None</option>
+                <option value="mo_color">MO color</option>
+                <option value="ro_color">RO color</option>
+                <option value="mo_texture">MO texture</option>
+                <option value="ro_texture">RO texture</option>
+                <option value="mo_size">MO size</option>
+                <option value="ro_size">RO size</option>
+                <option value="light_color">Light color</option>
+                <option value="table_color">Table color</option>
+                <option value="table_texture">Table texture</option>
+                <option value="distractors">Distractors</option>
+                <option value="background_texture">Background texture</option>
+                <option value="camera_pose">Camera pose</option>
+                </select>
+              </div>
+              applied to task
+              <div class="select is-small">     
+                <select id="single-menu-tasks" onchange="updateSingleVideo()">
+                <option value="basketball_in_hoop" selected="selected">basketball</option>
+                <option value="close_box">close box</option>
+                <option value="close_laptop_lid">close laptop</option>
+                <option value="empty_dishwasher">empty dishwasher</option>
+                <option value="get_ice_from_fridge">get ice</option>
+                <option value="hockey">hockey</option>
+                <option value="meat_on_grill">meat on grill</option>
+                <option value="move_hanger">move hanger</option>
+                <option value="wipe_desk">wipe desk</option>
+                <option value="open_drawer">open drawer</option>
+                <option value="slide_block_to_target">slide block</option>
+                <option value="reach_and_drag">reach and drag</option>
+                <option value="put_money_in_safe">put money in safe</option>
+                <option value="place_wine_at_rack_location">place wine</option>
+                <option value="insert_onto_square_peg">insert peg</option>
+                <option value="stack_cups">stack cups</option>
+                <option value="turn_oven_on">turn_oven_on</option>
+                <option value="straighten_rope">straighten rope</option>
+                <option value="setup_chess">setup chess</option>
+                <option value="scoop_with_spatula">scoop with spatula</option>
+                </select>
+              </div>
+              <br/>
+              <br/>
+              
+              
+              <video id="perturbation-task-video"
+                     muted
+                     autoplay
+                     loop
+                     width="100%">
+                <source src="media/perturbations/basketball_in_hoop-none.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
