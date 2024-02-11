@@ -248,81 +248,57 @@
   </div>
 </section>
 
-<section class="section">
-  <div class="container is-max-widescreen">
-    <div class="rows">
-      <div class="rows is-centered ">
-        <div class="row is-full-width">
-          <br/>
-          <br/>
-
-          <h2 class="title is-3">Real-world results</h2>
-          <div class="columns">
-            <div class="column has-text-centered">
-              <h3 class="title is-5">Real-world perturbations factors</h3>
-  
-              Perturbation
-              <div class="select is-small">
-                <select id="single-menu-perturbations" onchange="updateSingleVideo()">
-                <option value="none" selected="selected">None</option>
-                <option value="mo_color">MO color</option>
-                <option value="ro_color">RO color</option>
-                <option value="mo_texture">MO texture</option>
-                <option value="ro_texture">RO texture</option>
-                <option value="mo_size">MO size</option>
-                <option value="ro_size">RO size</option>
-                <option value="light_color">Light color</option>
-                <option value="table_color">Table color</option>
-                <option value="table_texture">Table texture</option>
-                <option value="distractors">Distractors</option>
-                <option value="background_texture">Background texture</option>
-                <option value="camera_pose">Camera pose</option>
-                </select>
-              </div>
-              applied to task
-              <div class="select is-small">     
-                <select id="single-menu-tasks" onchange="updateSingleVideo()">
-                <option value="slide_block_to_target_real" selected="selected">slide block real</option>
-                <option value="close_box">close box</option>
-                <option value="close_laptop_lid">close laptop</option>
-                <option value="empty_dishwasher">empty dishwasher</option>
-                <option value="get_ice_from_fridge">get ice</option>
-                <option value="hockey">hockey</option>
-                <option value="meat_on_grill">meat on grill</option>
-                <option value="move_hanger">move hanger</option>
-                <option value="wipe_desk">wipe desk</option>
-                <option value="open_drawer">open drawer</option>
-                <option value="reach_and_drag">reach and drag</option>
-                <option value="put_money_in_safe">put money in safe</option>
-                <option value="place_wine_at_rack_location">place wine</option>
-                <option value="insert_onto_square_peg">insert peg</option>
-                <option value="stack_cups">stack cups</option>
-                <option value="turn_oven_on">turn_oven_on</option>
-                <option value="straighten_rope">straighten rope</option>
-                <option value="setup_chess">setup chess</option>
-                <option value="scoop_with_spatula">scoop with spatula</option>
-                </select>
-              </div>
-              <br/>
-              <br/>
-              
-              
-              <video id="perturbation-task-video"
-                     muted
-                     autoplay
-                     loop
-                     width="100%">
-                <source src="media/real_world/cover.mp4"
-                        type="video/mp4">
-              </video>
-            </div>
-          </div>
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay muted loop height="100%">
+            <source src="media/real_world/slide_block_to_target.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay muted loop height="100%">
+            <source src="media/real_world/slide_block_to_target_Light_Color.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+         <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay muted loop height="100%">
+            <source src="media/real_world/slide_block_to_target_MO_Size.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay muted loop height="100%">
+            <source src="media/real_world/slide_block_to_target_background.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay muted loop height="100%">
+            <source src="media/real_world/slide_block_to_target_real-camera_pose.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay muted loop height="100%">
+            <source src="media/real_world/slide_block_to_target_table_color.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay muted loop height="100%">
+            <source src="media/real_world/slide_block_to_target_table_texture.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-
               
 
 </body>
