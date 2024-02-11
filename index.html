@@ -32,6 +32,29 @@
       video.playbackRate = 1.75;
       video.play();
     }
+    function init2() {
+      const video = document.getElementById("perturbation-task-video");
+      video.addEventListener("error", () => {
+        console.log("Error loading video: ", video.src), ". Setting default to none";
+        const task = document.getElementById("single-menu-tasks").value;
+        const uri = "media/real_world/" + task + "-none.mp4";
+        video.src = uri;
+        video.playbackRate = 1.00;
+        video.play();
+      }, true);
+    }
+
+    function updateSingleVideo2() {
+      const task = document.getElementById("single-menu-tasks").value;
+      const perturbation = document.getElementById("single-menu-perturbations").value;
+
+      const video = document.getElementById("perturbation-task-video");
+      const uri = "media/real_world/" + task + "-" + perturbation + ".mp4"
+      console.log("uri: ", uri);
+      video.src = uri;
+      video.playbackRate = 1.00;
+      video.play();
+    }
   </script>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
@@ -51,7 +74,8 @@
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
 </head>
-<body onload="init(); updateSingleVideo();">
+<body onload="init(); init2(); updateSingleVideo(); updateSingleVideo2();">
+  
 
 <section class="hero">
   <div class="hero-body">
@@ -261,7 +285,7 @@
   
               Perturbation
               <div class="select is-small">
-                <select id="single-menu-perturbations" onchange="updateSingleVideo()">
+                <select id="single-menu-perturbations" onchange="updateSingleVideo2()">
                 <option value="none" selected="selected">None</option>
                 <option value="mo_color">MO color</option>
                 <option value="ro_color">RO color</option>
@@ -279,8 +303,8 @@
               </div>
               applied to task
               <div class="select is-small">     
-                <select id="single-menu-tasks" onchange="updateSingleVideo()">
-                <option value="basketball_in_hoop" selected="selected">basketball</option>
+                <select id="single-menu-tasks" onchange="updateSingleVideo2()">
+                <option value="slide_block_to_target_real" selected="selected">slide block</option>
                 <option value="close_box">close box</option>
                 <option value="close_laptop_lid">close laptop</option>
                 <option value="empty_dishwasher">empty dishwasher</option>
