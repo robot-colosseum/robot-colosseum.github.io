@@ -53,6 +53,25 @@
   <script src="./static/js/index.js"></script>
 </head>
 <body onload="init(); updateSingleVideo();">
+
+  /* Make the carousel container scrollable */
+.carousel {
+  overflow-x: auto; /* Horizontal scrolling */
+  white-space: nowrap; /* Prevent wrapping of items */
+}
+
+/* Adjust video size and ensure they are inline */
+.carousel .item {
+  display: inline-block;
+  vertical-align: top; /* Align items to the top */
+}
+
+/* Set a maximum height for videos */
+.carousel video {
+  max-height: 500px; /* Adjust based on your needs */
+  width: auto; /* Maintain aspect ratio */
+}
+
   
 
 <section class="hero">
