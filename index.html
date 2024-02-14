@@ -13,8 +13,12 @@
       const video = document.getElementById("perturbation-task-video");
       video.addEventListener("error", () => {
         console.log("Error loading video: ", video.src), ". Setting default to none";
+        if(video.src.includes("undefined")) {
+          console.log("Don't have an undefined version of the clip, just crash");
+          return;
+        }
         const task = document.getElementById("single-menu-tasks").value;
-        const uri = "media/perturbations/" + task + "-none.mp4";
+        const uri = "media/perturbations/" + task + "-undefined.mp4";
         video.src = uri;
         video.playbackRate = 1.75;
         video.play();
@@ -264,70 +268,143 @@
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item item-steve">
           <video poster="" id="steve" autoplay muted loop height="100%">
-            <source src="media/failure_cases/1_basketball_in_hoop_11_w300000_s1_fail.mp4"
+            <source src="media/failure_cases/peract/1_basketball_in_hoop_11_w300000_s1_fail.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-fullbody">
           <video poster="" id="fullbody" autoplay muted loop height="100%">
-            <source src="media/failure_cases/2_close_box_9_w300000_s0_fail.mp4"
+            <source src="media/failure_cases/peract/2_close_box_9_w300000_s0_fail.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-shiba">
           <video poster="" id="shiba" autoplay muted loop height="100%">
-            <source src="media/failure_cases/3_open_drawer_6_w300000_s1_fail.mp4"
+            <source src="media/failure_cases/peract/3_open_drawer_6_w300000_s1_fail.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-blueshirt">
           <video poster="" id="blueshirt" autoplay muted loop height="100%">
-            <source src="media/failure_cases/4_place_wine_at_rack_location_5_w300000_s1_fail.mp4"
+            <source src="media/failure_cases/peract/4_place_wine_at_rack_location_5_w300000_s1_fail.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-shiba">
           <video poster="" id="shiba" autoplay muted loop height="100%">
-            <source src="media/failure_cases/5_put_money_in_safe_3_w300000_s0_fail.mp4"
+            <source src="media/failure_cases/peract/5_put_money_in_safe_3_w300000_s0_fail.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-shiba">
           <video poster="" id="shiba" autoplay muted loop height="100%">
-            <source src="media/failure_cases/6_reach_and_drag_10_w300000_s2_fail.mp4"
+            <source src="media/failure_cases/peract/6_reach_and_drag_10_w300000_s2_fail.mp4"
                     type="video/mp4">
           </video>
         </div>
        <div class="item item-chair-tp">
           <video poster="" id="chair-tp" autoplay muted loop height="100%">
-            <source src="media/failure_cases/7_scoop_with_spatula_2_w300000_s0_fail.mp4"
+            <source src="media/failure_cases/peract/7_scoop_with_spatula_2_w300000_s0_fail.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-shiba">
           <video poster="" id="shiba" autoplay muted loop height="100%">
-            <source src="media/failure_cases/8_scoop_with_spatula_7_w300000_s3_fail.mp4"
+            <source src="media/failure_cases/peract/8_scoop_with_spatula_7_w300000_s3_fail.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-shiba">
           <video poster="" id="shiba" autoplay muted loop height="100%">
-            <source src="media/failure_cases/9_slide_block_to_target_8_w300000_s1_fail.mp4"
+            <source src="media/failure_cases/peract/9_slide_block_to_target_8_w300000_s1_fail.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-shiba">
           <video poster="" id="shiba" autoplay muted loop height="100%">
-            <source src="media/failure_cases/10_stack_cups_1_w300000_s0_fail.mp4"
+            <source src="media/failure_cases/peract/10_stack_cups_1_w300000_s0_fail.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-shiba">
           <video poster="" id="shiba" autoplay muted loop height="100%">
-            <source src="media/failure_cases/11_stack_cups_4_w300000_s0_fail.mp4"
+            <source src="media/failure_cases/peract/11_stack_cups_4_w300000_s0_fail.mp4"
                     type="video/mp4">
           </video>
         </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div class="column has-text-centered">
+        <h3 class="title is-5">Failure cases for RVT</h3>
+      </div>
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-steve">
+            <video poster="" id="steve" autoplay muted loop height="100%">
+              <source src="media/failure_cases/rvt/1_basketball_in_hoop_11_fail_0.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-fullbody">
+            <video poster="" id="fullbody" autoplay muted loop height="100%">
+              <source src="media/failure_cases/rvt/2_close_box_2_fail_1.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-shiba">
+            <video poster="" id="shiba" autoplay muted loop height="100%">
+              <source src="media/failure_cases/rvt/3_close_laptop_lid_6_fail_0.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-blueshirt">
+            <video poster="" id="blueshirt" autoplay muted loop height="100%">
+              <source src="media/failure_cases/rvt/4_empty_dishwasher_3_fail_1.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-shiba">
+            <video poster="" id="shiba" autoplay muted loop height="100%">
+              <source src="media/failure_cases/rvt/5_get_ice_from_fridge_8_fail_1.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-shiba">
+            <video poster="" id="shiba" autoplay muted loop height="100%">
+              <source src="media/failure_cases/rvt/6_hockey_7_fail_0.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+         <div class="item item-chair-tp">
+            <video poster="" id="chair-tp" autoplay muted loop height="100%">
+              <source src="media/failure_cases/rvt/7_insert_onto_square_peg_9_fail_0.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-shiba">
+            <video poster="" id="shiba" autoplay muted loop height="100%">
+              <source src="media/failure_cases/rvt/8_open_drawer_2_fail_1.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-shiba">
+            <video poster="" id="shiba" autoplay muted loop height="100%">
+              <source src="media/failure_cases/rvt/9_place_wine_at_rack_location_5_fail_0.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-shiba">
+            <video poster="" id="shiba" autoplay muted loop height="100%">
+              <source src="media/failure_cases/rvt/10_wipe_desk_4_fail_0.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
         </div>
       </div>
     </div>
