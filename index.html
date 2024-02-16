@@ -7,6 +7,24 @@
   <meta name="keywords" content="Generalization, Manipulation">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Colosseum</title>
+  <style>
+  .video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates a 3-column grid */
+    gap: 10px; /* Adds some space between the videos */
+    max-width: 1000px; /* Adjust based on your preference */
+    margin: auto; /* Center the grid horizontally */
+  }
+  .video-grid video {
+    width: 100%; /* Makes video fill the cell */
+    aspect-ratio: 16 / 9; /* Keeps the aspect ratio of videos */
+  }
+  .video-section-header {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+</style>
 
   <script>
     function init() {
@@ -58,7 +76,36 @@
 </head>
 <body onload="init(); updateSingleVideo(); ">
 
-  
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" target="_blank" href="https://progprompt.github.io/">
+            ProgPrompt
+          </a>
+          <a class="navbar-item" target="_blank" href="http://ar2d2.site/">
+            AR2-D2
+          </a>
+          <a class="navbar-item" target="_blank" href="https://newtonreasoning.github.io/">
+            NEWTON
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
 
 <section class="hero">
   <div class="hero-body">
@@ -593,34 +640,6 @@
   </div>
 </section>
 
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>3x3 Video Grid</title>
-<style>
-  .video-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Creates a 3-column grid */
-    gap: 10px; /* Adds some space between the videos */
-    max-width: 1000px; /* Adjust based on your preference */
-    margin: auto; /* Center the grid horizontally */
-  }
-  .video-grid video {
-    width: 100%; /* Makes video fill the cell */
-    aspect-ratio: 16 / 9; /* Keeps the aspect ratio of videos */
-  }
-  .video-section-header {
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-</style>
-</head>
-<body>
-
 <section class="video-section">
   <div style="text-align: center;">
     <h2>Reproducibility in real-world experiments</h2>
@@ -825,7 +844,20 @@
     </video>
   </div>
 </section>
-                           
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content has-text-centered">
+          <p>
+            Website template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a> made by the amazing <a href="https://keunhong.com/">Keunhong Park</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>
