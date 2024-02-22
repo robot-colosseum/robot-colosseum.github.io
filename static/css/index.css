@@ -81,7 +81,8 @@ body {
 }
 
 .publication-authors a {
-   color: hsl(121, 100%, 36%) !important;
+   color:  #990000 !important;
+   text-shadow: #990000 1px 1px 1px;
 }
 
 .conference-authors a {
