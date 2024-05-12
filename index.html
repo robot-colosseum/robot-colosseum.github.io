@@ -24,22 +24,22 @@
     <script src="./static/js/index.js"></script>
 
     <style>
-    .video-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr); /* Creates a 3-column grid */
-      gap: 10px; /* Adds some space between the videos */
-      max-width: 1000px; /* Adjust based on your preference */
-      margin: auto; /* Center the grid horizontally */
-    }
-    .video-grid video {
-      width: 100%; /* Makes video fill the cell */
-      aspect-ratio: 16 / 9; /* Keeps the aspect ratio of videos */
-    }
-    .video-section-header {
-      text-align: center;
-      margin-top: 20px;
-      margin-bottom: 20px;
-    }
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Creates a 3-column grid */
+            gap: 10px; /* Adds some space between the videos */
+            max-width: 1000px; /* Adjust based on your preference */
+            margin: auto; /* Center the grid horizontally */
+        }
+        .video-grid video {
+            width: 100%; /* Makes video fill the cell */
+            aspect-ratio: 16 / 9; /* Keeps the aspect ratio of videos */
+        }
+        .video-section-header {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
     </style>
 
     <script>
@@ -70,114 +70,102 @@
     </script>
 </head>
 
-<body onload="init(); updateSingleVideo(); ">
-
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More Research
-        </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" target="_blank" href="https://progprompt.github.io/">
-            ProgPrompt
-          </a>
-          <a class="navbar-item" target="_blank" href="http://ar2d2.site/">
-            AR2-D2
-          </a>
-          <a class="navbar-item" target="_blank" href="https://newtonreasoning.github.io/">
-            NEWTON
-          </a>
+<body onload="init(); updateSingleVideo();">
+    <!--NAVIGATION BAR-->
+    <nav class="navbar" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
         </div>
-      </div>
-    </div>
-
-  </div>
-</nav>
-
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">
-            <img src="media/emoji_RSS.png" alt="Emoji" style="width: 45px; height: 45px; vertical-align: middle;">The COLOSSEUM: <br> A Benchmark for Evaluating Generalization for Robotic Manipulation
-          </h1>
-          <h3 class="title is-4 conference-authors"><a target="_blank" href="https://robot-colosseum.github.io/">Arxiv</a></h3>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a target="_blank" href="https://wpumacay.github.io/">Wilbert Pumacay</a><sup>*</sup><sup>1</sup>,</span>
-            <span class="author-block">
-              <a target="_blank" href="https://ishikasingh.github.io/">Ishika Singh</a><sup>*</sup><sup>2</sup>,</span>
-            <span class="author-block">
-              <a target="_blank" href="https://duanjiafei.com/">Jiafei Duan</a><sup>*</sup><sup>3</sup>,</span>
-            <span class="author-block">
-              <a target="_blank" href="https://ranjaykrishna.com/index.html/">Ranjay Krishna</a><sup>3, 4</sup>
-            <span class="author-block">
-              <a target="_blank" href="https://jessethomason.com/">Jesse Thomason</a><sup>2</sup>
-            <span class="author-block">
-              <a target="_blank" href="https://homes.cs.washington.edu/~fox/">Dieter Fox</a><sup>3, 5</sup>
-            </span>
-          </div>
-
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Universidad Católica San Pablo</span>
-            <span class="author-block"><sup>2</sup>University of Southern California</span>
-            <span class="author-block"><sup>3</sup>University of Washington</span>
-            <span class="author-block"><sup>4</sup>Allen Institute for Artifical Intelligence</span>
-            <span class="author-block"><sup>5</sup>NVIDIA</span>
-
-          </div>
-          <div class="footnote">
-            <p>* Equal contribution</p>
-          </div>
-          <div class="column has-text-centered">
-            <span class="link-block">
-              <a target="_blank" href="https://arxiv.org/abs/2402.08191"
-                 class="external-link button is-normal is-rounded is-dark">
-                <span class="icon">
-                    <i class="fas fa-file"></i>
-                </span>
-                <span>ArXiv</span>
-              </a>
-            </span>
-            <!-- Talk Link. -->
-            <span class="link-block">
-              <a target="_blank" href="https://robot-colosseum.readthedocs.io/en/latest/overview.html"
-                 class="external-link button is-normal is-rounded is-dark">
-                <span class="icon">
-                    <i class="fas fa-chalkboard-teacher"></i>
-                </span>
-                <span>Get started with the Colosseum</span>
-              </a>
-            </span>
-            <!-- Code Link. -->
-            <span class="link-block">
-              <a target="_blank" href="https://github.com/robot-colosseum/robot-colosseum"
-                 class="external-link button is-normal is-rounded is-dark">
-                <span class="icon">
-                    <i class="fab fa-github"></i>
-                </span>
-                <span>Code</span>
-                </a>
-            </span>
-            
-
-
-
+        <div class="navbar-menu">
+            <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">More Research</a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" target="_blank" href="https://progprompt.github.io/">ProgPrompt</a>
+                        <a class="navbar-item" target="_blank" href="http://ar2d2.site/">AR2-D2</a>
+                        <a class="navbar-item" target="_blank" href="https://newtonreasoning.github.io/">NEWTON</a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section> 
+    </nav>
+
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-1 publication-title">
+                        <img src="media/emoji_RSS.png" alt="Emoji" style="width: 45px; height: 45px; vertical-align: middle;">
+                            The COLOSSEUM: <br> A Benchmark for Evaluating Generalization for Robotic Manipulation
+                        </h1>
+                        <h3 class="title is-4 conference-authors">
+                            <a target="_blank" href="https://robot-colosseum.github.io/">
+                                Arxiv
+                            </a>
+                        </h3>
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block">
+                                <a target="_blank" href="https://wpumacay.github.io/">Wilbert Pumacay</a><sup>*</sup><sup>1</sup>,
+                            </span>
+                            <span class="author-block">
+                                <a target="_blank" href="https://ishikasingh.github.io/">Ishika Singh</a><sup>*</sup><sup>2</sup>,
+                            </span>
+                            <span class="author-block">
+                                <a target="_blank" href="https://duanjiafei.com/">Jiafei Duan</a><sup>*</sup><sup>3</sup>,
+                            </span>
+                            <span class="author-block">
+                                <a target="_blank" href="https://ranjaykrishna.com/index.html/">Ranjay Krishna</a><sup>3, 4</sup>
+                            </span>
+                            <span class="author-block">
+                                <a target="_blank" href="https://jessethomason.com/">Jesse Thomason</a><sup>2</sup>
+                            </span>
+                            <span class="author-block">
+                                <a target="_blank" href="https://homes.cs.washington.edu/~fox/">Dieter Fox</a><sup>3, 5</sup>
+                            </span>
+                        </div>
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block"><sup>1</sup>Universidad Católica San Pablo</span>
+                            <span class="author-block"><sup>2</sup>University of Southern California</span>
+                            <span class="author-block"><sup>3</sup>University of Washington</span>
+                            <span class="author-block"><sup>4</sup>Allen Institute for Artifical Intelligence</span>
+                            <span class="author-block"><sup>5</sup>NVIDIA</span>
+                        </div>
+                        <div class="footnote">
+                            <p>* Equal contribution</p>
+                        </div>
+                        <div class="column has-text-centered">
+                            <!-- ArXiv link -->
+                            <span class="link-block">
+                                <a target="_blank" href="https://arxiv.org/abs/2402.08191" class="external-link button is-normal is-rounded is-dark">
+                                    <span class="icon"><i class="fas fa-file"></i></span>
+                                    <span>ArXiv</span>
+                                </a>
+                            </span>
+                            <!-- Docs link -->
+                            <span class="link-block">
+                                <a target="_blank" href="https://robot-colosseum.readthedocs.io/en/latest/overview.html" class="external-link button is-normal is-rounded is-dark">
+                                    <span class="icon"><i class="fas fa-chalkboard-teacher"></i></span>
+                                    <span>Get started with the Colosseum</span>
+                                </a>
+                            </span>
+                            <!-- Code Link. -->
+                            <span class="link-block">
+                                <a target="_blank" href="https://github.com/robot-colosseum/robot-colosseum" class="external-link button is-normal is-rounded is-dark">
+                                    <span class="icon"><i class="fab fa-github"></i></span>
+                                    <span>Code</span>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 <section class="section">
