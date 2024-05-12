@@ -1,79 +1,75 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="description"
-        content="THE COLOSSEUM: A Benchmark for Evaluating Generalization for Robotic Manipulation">
-  <meta name="keywords" content="Generalization, Manipulation">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Colosseum</title>
-  <style>
-  .video-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Creates a 3-column grid */
-    gap: 10px; /* Adds some space between the videos */
-    max-width: 1000px; /* Adjust based on your preference */
-    margin: auto; /* Center the grid horizontally */
-  }
-  .video-grid video {
-    width: 100%; /* Makes video fill the cell */
-    aspect-ratio: 16 / 9; /* Keeps the aspect ratio of videos */
-  }
-  .video-section-header {
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-</style>
+    <meta charset="utf-8">
+    <title>Colosseum</title>
+    <meta name="description" content="THE COLOSSEUM: A Benchmark for Evaluating Generalization for Robotic Manipulation">
+    <meta name="keywords" content="Generalization, Manipulation">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <script>
-    function init() {
-      const video = document.getElementById("perturbation-task-video");
-      video.addEventListener("error", () => {
-        console.log("Error loading video: ", video.src), ". Setting default to none";
-        if(video.src.includes("undefined")) {
-          console.log("Don't have an undefined version of the clip, just crash");
-          return;
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+
+    <style>
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* Creates a 3-column grid */
+      gap: 10px; /* Adds some space between the videos */
+      max-width: 1000px; /* Adjust based on your preference */
+      margin: auto; /* Center the grid horizontally */
+    }
+    .video-grid video {
+      width: 100%; /* Makes video fill the cell */
+      aspect-ratio: 16 / 9; /* Keeps the aspect ratio of videos */
+    }
+    .video-section-header {
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    </style>
+
+    <script>
+        function init() {
+            const video = document.getElementById("perturbation-task-video");
+            video.addEventListener("error", () => {
+                console.log("Error loading video: ", video.src), ". Setting default to none";
+                if(video.src.includes("undefined")) {
+                    console.log("Don't have an undefined version of the clip, just crash");
+                    return;
+                }
+                const task = document.getElementById("single-menu-tasks").value;
+                const uri = "media/perturbations/" + task + "-undefined.mp4";
+                video.src = uri;
+                video.playbackRate = 1.75;
+                video.play();
+            }, true);
         }
-        const task = document.getElementById("single-menu-tasks").value;
-        const uri = "media/perturbations/" + task + "-undefined.mp4";
-        video.src = uri;
-        video.playbackRate = 1.75;
-        video.play();
-      }, true);
-    }
-
-    function updateSingleVideo() {
-      const task = document.getElementById("single-menu-tasks").value;
-      const perturbation = document.getElementById("single-menu-perturbations").value;
-
-      const video = document.getElementById("perturbation-task-video");
-      const uri = "media/perturbations/" + task + "-" + perturbation + ".mp4"
-      console.log("uri: ", uri);
-      video.src = uri;
-      video.playbackRate = 1.75;
-      video.play();
-    }
-
-  </script>
-
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
-
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
+        function updateSingleVideo() {
+            const task = document.getElementById("single-menu-tasks").value;
+            const perturbation = document.getElementById("single-menu-perturbations").value;
+            const video = document.getElementById("perturbation-task-video");
+            const uri = "media/perturbations/" + task + "-" + perturbation + ".mp4"
+            video.src = uri;
+            video.playbackRate = 1.75;
+            video.play();
+        }
+    </script>
 </head>
+
 <body onload="init(); updateSingleVideo(); ">
 
 <nav class="navbar" role="navigation" aria-label="main navigation">
